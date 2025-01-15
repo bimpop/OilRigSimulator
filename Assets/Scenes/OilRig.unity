@@ -1368,9 +1368,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707231371}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 0, z: 0.010100013}
-  m_LocalScale: {x: 0.010000001, y: 0.010000002, z: 0.010000003}
+  m_LocalRotation: {x: 0.53729963, y: 0.000000015805067, z: 0.000000015805067, w: 0.8433915}
+  m_LocalPosition: {x: 0, y: 0, z: 0.010100022}
+  m_LocalScale: {x: 0.010000002, y: 0.009999999, z: 0.009999998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9221847093939506365}
@@ -1390,7 +1390,7 @@ Transform:
   - {fileID: 2023347411176493684}
   - {fileID: 5917315512686975315}
   m_Father: {fileID: 533193074183855087}
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!59 &707231373
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -1412,7 +1412,7 @@ HingeJoint:
     targetPosition: 0
   m_UseMotor: 1
   m_Motor:
-    targetVelocity: -20
+    targetVelocity: 0
     force: 200
     freeSpin: 0
   m_UseLimits: 1
@@ -1469,8 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3129cd22a676da04abf738e1d11e2afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 30
-  armPivot: {fileID: 707231372}
+  motorSpeed: 10
+  motorForce: 200
 --- !u!64 &722613160
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1535,6 +1535,14 @@ PrefabInstance:
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1929248995}
+    - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateArmCounterClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
+      propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopArmRotation
+      objectReference: {fileID: 0}
     - target: {fileID: 6909635758491006359, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2469,6 +2477,10 @@ PrefabInstance:
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1929248995}
+    - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateBaseCounterClockwise
+      objectReference: {fileID: 0}
     - target: {fileID: 6909635758491006359, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2643,6 +2655,14 @@ PrefabInstance:
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1929248995}
+    - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateArmClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
+      propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopArmRotation
+      objectReference: {fileID: 0}
     - target: {fileID: 6909635758491006359, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2953,6 +2973,7 @@ GameObject:
   - component: {fileID: 1671021685}
   - component: {fileID: 1671021684}
   - component: {fileID: 1671021683}
+  - component: {fileID: 1671021687}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -3043,8 +3064,8 @@ Transform:
   m_GameObject: {fileID: 1671021682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: 40.2218, z: -74.5}
-  m_LocalScale: {x: 3, y: 2, z: 4}
+  m_LocalPosition: {x: -2.3, y: 40.0718, z: -75.21}
+  m_LocalScale: {x: 3, y: 1.7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 851524122}
@@ -3052,6 +3073,33 @@ Transform:
   - {fileID: 1123831023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1671021687
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671021682}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &1741265748
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3852,7 +3900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6089873160400704998}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -8.760182e-18, y: 0.02999875, z: -0.00023757573}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -3864,7 +3912,7 @@ Transform:
   - {fileID: 8629810118520635599}
   - {fileID: 707231372}
   m_Father: {fileID: 543450652010987009}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &543450652010987009
 Transform:
   m_ObjectHideFlags: 0
@@ -8058,10 +8106,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 200
     freeSpin: 0
   m_UseLimits: 0
   m_ExtendedLimits: 0
@@ -8117,7 +8165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59180d9989281374b89a71e4d73c9ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 30
+  motorSpeed: 10
+  motorForce: 200
 --- !u!4 &6426448319787334134
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ public class CraneController : MonoBehaviour
     public CraneBaseController baseController;
     public CraneArmController armController;
 
-    // These methods will be linked to buttons
     public void RotateBaseClockwise()
     {
         baseController.SetRotationDirection(1f);

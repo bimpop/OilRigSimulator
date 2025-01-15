@@ -1,27 +1,24 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(HingeJoint))]
 public class CraneBaseController : MonoBehaviour
 {
-    public float rotationSpeed = 30f; // Degrees per second
+    private HingeJoint _hingeJoint;
 
-    private float rotationDirection = 0f;
+    public float motorSpeed = 10f; // Speed when rotating
+    public float motorForce = 200f; // Force applied by the motor
 
-    private void Start()
+    void Start()
     {
-        Debug.Log("Testing crane rotation.");
-    }
-
-    void Update()
-    {
-        if (rotationDirection != 0f)
-        {
-            transform.Rotate(Vector3.up, rotationDirection * rotationSpeed * Time.deltaTime);
-        }
+        _hingeJoint = GetComponent<HingeJoint>();
+        _hingeJoint.useMotor = true;
     }
 
     public void SetRotationDirection(float direction)
     {
-        rotationDirection = direction;
+        JointMotor motor = _hingeJoint.motor;
+        motor.targetVelocity = direction * motorSpeed;
+        motor.force = motorForce;
+        _hingeJoint.motor = motor;
     }
 }

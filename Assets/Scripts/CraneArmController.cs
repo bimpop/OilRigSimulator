@@ -1,22 +1,24 @@
 using UnityEngine;
 
+[RequireComponent(typeof(HingeJoint))]
 public class CraneArmController : MonoBehaviour
 {
-    public float rotationSpeed = 30f; // Degrees per second
-    public Transform armPivot; // Pivot point of the arm
+    private HingeJoint _hingeJoint;
 
-    private float rotationDirection = 0f;
+    public float motorSpeed = 10f; // Speed when rotating
+    public float motorForce = 200f; // Force applied by the motor
 
-    void Update()
+    void Start()
     {
-        if (rotationDirection != 0f && armPivot != null)
-        {
-            armPivot.Rotate(Vector3.forward, rotationDirection * rotationSpeed * Time.deltaTime);
-        }
+        _hingeJoint = GetComponent<HingeJoint>();
+        _hingeJoint.useMotor = true;
     }
 
     public void SetRotationDirection(float direction)
     {
-        rotationDirection = direction;
+        JointMotor motor = _hingeJoint.motor;
+        motor.targetVelocity = direction * motorSpeed;
+        motor.force = motorForce;
+        _hingeJoint.motor = motor;
     }
 }
