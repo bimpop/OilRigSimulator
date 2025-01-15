@@ -1,0 +1,10 @@
+# ninja log v5
+132	9092	7586746546968921	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7da22393d6e08cd9
+2	9312	7586746549451192	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	fafa7d50c2ed412b
+197	9404	7586746550215476	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	858f3f422609ac09
+77	9762	7586746553835693	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	221212ef0c8ae226
+177	9924	7586746555656092	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ed6569c23c0f42ef
+58	10790	7586746563877966	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	be64299f431a6bc4
+96	11437	7586746570790285	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	55d49b08c2763d8d
+31	12527	7586746580812217	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7cc7e1bf106490ce
+12532	13167	7586746588088923	C:/Users/abimb/UnityProjects/XRB/Prototyping/OilRigSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/10695u3m/obj/arm64-v8a/libgame.so	3cb6f5d786d08d45

@@ -11,13 +11,11 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger pressed");
         if (other.CompareTag("PokeInteractor"))
         {
-            Debug.Log("Button pressed");
+            // Debug.Log("Button pressed");
             onButtonPressed.Invoke();
-            animator.SetBool(IsPressed, true);
-            // AnimateButtonPress(true);
+            AnimateButtonPress(true);
         }
     }
 
@@ -25,17 +23,17 @@ public class ButtonController : MonoBehaviour
     {
         if (other.CompareTag("PokeInteractor"))
         {
-            Debug.Log("Button released");
+            // Debug.Log("Button released");
             onButtonReleased.Invoke();
-            animator.SetBool(IsPressed, false);
-            // AnimateButtonPress(false);
+            AnimateButtonPress(false);
         }
     }
 
     private void AnimateButtonPress(bool isPressed)
     {
         // Add animation logic here
-        Vector3 targetPosition = isPressed ? transform.localPosition - Vector3.up * 0.02f : transform.localPosition + Vector3.up * 0.02f;
-        transform.localPosition = targetPosition;
+        animator.SetBool(IsPressed, isPressed);
+        // Vector3 targetPosition = isPressed ? transform.localPosition - Vector3.up * 0.02f : transform.localPosition + Vector3.up * 0.02f;
+        // transform.localPosition = targetPosition;
     }
 }
