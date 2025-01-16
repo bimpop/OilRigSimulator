@@ -1350,9 +1350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 707231372}
-  - component: {fileID: 707231374}
   - component: {fileID: 707231373}
-  - component: {fileID: 707231375}
   m_Layer: 0
   m_Name: ArmAssembly
   m_TagString: Untagged
@@ -1368,9 +1366,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707231371}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.53729963, y: 0.000000015805067, z: 0.000000015805067, w: 0.8433915}
+  m_LocalRotation: {x: 0.53729963, y: 0.000000026341779, z: 0.000000026341779, w: 0.8433915}
   m_LocalPosition: {x: 0, y: 0, z: 0.010100022}
-  m_LocalScale: {x: 0.010000002, y: 0.009999999, z: 0.009999998}
+  m_LocalScale: {x: 0.010000002, y: 0.009999999, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9221847093939506365}
@@ -1391,73 +1389,7 @@ Transform:
   - {fileID: 5917315512686975315}
   m_Father: {fileID: 533193074183855087}
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
---- !u!59 &707231373
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707231371}
-  serializedVersion: 3
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 1
-  m_Motor:
-    targetVelocity: 0
-    force: 200
-    freeSpin: 0
-  m_UseLimits: 1
-  m_ExtendedLimits: 0
-  m_UseAcceleration: 0
-  m_Limits:
-    min: 0
-    max: 60
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!54 &707231374
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707231371}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &707231375
+--- !u!114 &707231373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1466,11 +1398,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 707231371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3129cd22a676da04abf738e1d11e2afe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bacdd54442f6ec45806190372ae3f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorSpeed: 10
-  motorForce: 200
+  rotationSpeed: 30
+  armPivot: {fileID: 707231372}
 --- !u!64 &722613160
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1530,11 +1462,11 @@ PrefabInstance:
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateArmCounterClockwise
@@ -2472,11 +2404,11 @@ PrefabInstance:
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateBaseCounterClockwise
@@ -2650,11 +2582,11 @@ PrefabInstance:
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateArmClockwise
@@ -2894,11 +2826,11 @@ PrefabInstance:
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517703049108249086, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: onButtonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1929248995}
+      objectReference: {fileID: 0}
     - target: {fileID: 6909635758491006359, guid: 280dffd70aca9c445bb345ce8a67f55f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3439,11 +3371,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929248993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae31b4c0ad657334c99c8db8a2512abd, type: 3}
+  m_Script: {fileID: 11500000, guid: b44391bbd2d1dba4cb019589d414a26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseController: {fileID: 6364262638227313510}
-  armController: {fileID: 707231375}
+  baseController: {fileID: 6364262638227313508}
+  armController: {fileID: 707231373}
 --- !u!64 &2024131286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7791,9 +7723,7 @@ GameObject:
   - component: {fileID: 533193074183855087}
   - component: {fileID: 5032879960086961071}
   - component: {fileID: 6364262638227313507}
-  - component: {fileID: 6364262638227313509}
   - component: {fileID: 6364262638227313508}
-  - component: {fileID: 6364262638227313510}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -8087,73 +8017,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!59 &6364262638227313508
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6089873160400704998}
-  serializedVersion: 3
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 1
-  m_Motor:
-    targetVelocity: 0
-    force: 200
-    freeSpin: 0
-  m_UseLimits: 0
-  m_ExtendedLimits: 0
-  m_UseAcceleration: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!54 &6364262638227313509
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6089873160400704998}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &6364262638227313510
+--- !u!114 &6364262638227313508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8162,11 +8026,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6089873160400704998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59180d9989281374b89a71e4d73c9ff0, type: 3}
+  m_Script: {fileID: 11500000, guid: fb747167bea74da43b27677512ad18d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorSpeed: 10
-  motorForce: 200
+  rotationSpeed: 30
 --- !u!4 &6426448319787334134
 Transform:
   m_ObjectHideFlags: 0
